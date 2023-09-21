@@ -116,21 +116,30 @@ Once the Flask application is up and running:
 
 1. **Web Interface**:
    - Navigate to `http://127.0.0.1:5000/`.
-   - Use the provided form to input your network names and descriptions.
+   - Use the provided form to input your network names, descriptions, zones, and spanned VLANs.
    - Hit the "Generate" button to get the subnet details.
 
 2. **REST API**:
    - Make a POST request to `http://127.0.0.1:5000/generate` with your network data in JSON format.
    - Example payload:
      ```json
-     [
-       {"name": "Isolation", "purpose": "Isolated network for testing"},
-       {"name": "Wireless", "purpose": "Mobile phones and tablets"}
-     ]
+     {
+       "zones": {
+         "zone-a": [
+           {"name": "Isolation", "purpose": "Isolated network for testing"},
+           {"name": "Wireless", "purpose": "Mobile phones and tablets"}
+         ],
+         "zone-b": [
+           {"name": "Docker", "purpose": "Docker containers"}
+         ]
+       },
+       "spanned_vlans": [
+         {"name": "Corosync", "cidr": "10.255.243.0/24", "purpose": "Proxmox cluster communication"},
+         {"name": "Migration", "cidr": "10.255.244.0/24", "purpose": "Proxmox VM migration"}
+       ]
+     }
      ```
-   - The response will contain the generated subnets for the provided networks.
-
----
+   - The response will contain the generated subnets for the provided networks, zones, and spanned VLANs.
 
 ## Wrapping Up 🌌
 
