@@ -1,5 +1,7 @@
 # Network Configuration Generator 🌍🚀
 
+![Helper-X.app](logo.svg)
+
 Welcome to the Network Configuration Generator! This project was born out of the need to create a consistent and efficient way to generate network configurations for various zones and purposes. And, of course, with a little extraterrestrial help from our friends, X1 and X2, from Planet Helper-X. (No relation, just a cosmic coincidence!)
 
 ## Overview 🌐
