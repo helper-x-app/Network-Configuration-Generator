@@ -6,7 +6,7 @@ Welcome to the Network Configuration Generator! This project was born out of the
 
 ## Overview 🌐
 
-In the age of smart devices, it's crucial to have a segmented network. You wouldn't want your "smart" socks, which, based on pressure and the ionic atmosphere around your ankles (caused by the aura field, obviously), precisely measure how much you need to poop, to be on the same network as your main server, right? 😂
+In the age of smart devices, it's crucial to have a segmented network. You wouldn't want your "smart" socks, which, based on pressure and the ionic atmosphere around your ankles (caused by the aura field, obviously), precisely measure how much you need to poop and when, to be on the same network as your main server, right? 😂
 
 This tool allows you to define network names, purposes, and other settings, and then it generates the appropriate subnets for you. It's designed to be flexible, scalable, and, most importantly, a bit fun! And if you ever wonder why it works so seamlessly, it's because X1 and X2, our alien buddies, have sprinkled a bit of their cosmic magic on it.
 
@@ -111,6 +111,30 @@ X1 and X2, while being from another planet, have a knack for understanding earth
    ```bash
    docker buildx build --platform linux/amd64,linux/arm64 -t <image-name>:<tag> . --push
    ```
+
+## Script Usage
+
+### Configuration File: `settings.json` ⚙️
+
+The `settings.json` file is crucial for the functioning of this tool. It contains the base settings that the generator uses to create the subnets. Here's a brief description of each key-value pair:
+
+- `base_cidr`: The base CIDR block from which the subnets will be generated. For example, `"10.0.0.0/8"`.
+  
+- `zone_splitting`: The CIDR notation to define how the base network should be split into zones. For example, `/16`.
+
+- `subnet_splitting`: The CIDR notation to define how each zone should be further split into subnets. For example, `/24`.
+
+#### Example `settings.json`
+
+```json
+{
+  "base_cidr": "10.0.0.0/8",
+  "zone_splitting": "/16",
+  "subnet_splitting": "/24"
+}
+```
+
+By configuring this file, you can control how the network is segmented, making it as granular or as broad as you need. Just make sure to keep it within the cosmic guidelines set by our friends X1 and X2 from Planet Helper-X! 🌌👽
 
 ## App Usage 🖥️
 
