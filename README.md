@@ -134,8 +134,8 @@ Once the Flask application is up and running:
          ]
        },
        "spanned_vlans": [
-         {"name": "Corosync", "cidr": "10.255.243.0/24", "purpose": "Proxmox cluster communication"},
-         {"name": "Migration", "cidr": "10.255.244.0/24", "purpose": "Proxmox VM migration"}
+         {"name": "Corosync", "cidr": "10.255.1.0/24", "purpose": "Proxmox cluster communication"},
+         {"name": "Migration", "cidr": "10.255.2.0/24", "purpose": "Proxmox VM migration"}
        ]
      }
      ```
