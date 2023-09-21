@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network Configuration Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Welcome to the Network Configuration Generator!</h1>
+
+    <!-- Settings -->
+    <h2>Settings</h2>
+    <label>Base CIDR: <input type="text" id="base_cidr" value="10.0.0.0/8"></label><br>
+    <label>Zone Splitting: <input type="text" id="zone_splitting" value="/16"></label><br>
+    <label>Subnet Splitting: <input type="text" id="subnet_splitting" value="/20"></label><br>
+
+    <!-- Generate Type -->
+    <label>Generate Type: 
+        <select id="generate_type">
+            <option value="byNetwork">Generate by Network</option>
+            <option value="byZone">Generate by Zone</option>
+        </select>
+    </label><br>
+
+    <!-- Zones and Networks -->
+    <div id="zones"></div>
+    <button type="button" onclick="addZone()">Add Zone</button>
+
+    <!-- Spanned VLANs -->
+    <div id="spanned-vlans"></div>
+    <button type="button" onclick="addSpannedVLAN()">Add Spanned VLAN</button>
+
+    <!-- Generate Button -->
+    <button type="button" onclick="generate()">Generate</button>
+
+    <!-- Output Div -->
+    <div id="output"></div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
