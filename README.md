@@ -1,6 +1,6 @@
 # Network Configuration Generator 🌍🚀
 
-![Helper-X.app](logo.svg)
+![Helper-X.app](images/logo.png)
 
 Welcome to the Network Configuration Generator! This project was born out of the need to create a consistent and efficient way to generate network configurations for various zones and purposes. And, of course, with a little extraterrestrial help from our friends, X1 and X2, from Planet Helper-X. (No relation, just a cosmic coincidence!)
 
@@ -31,7 +31,7 @@ Network Table for Zone A:
 | Wireless          | 10.0.4.0/24      | Mobile phones and tablets     |
 | Wired             | 10.0.8.0/24      | Desktops and wired devices    |
 | Docker            | 10.0.16.0/24     | Docker containers network     |
-| Proxmox           | 10.0.32.0/24     | Proxmox virtualization hosts  |
+| Virtualization    | 10.0.32.0/24     | VM virtualization hosts       |
 | DMZ               | 10.0.253.0/24    | Demilitarized Zone            |
 
 Network Table for Zone B:
@@ -50,9 +50,9 @@ Spanned VLAN-only Networks:
 
 | Network Name      | Subnet           | Purpose                       |
 |-------------------|------------------|-------------------------------|
-| Corosync          | 10.255.0.0/24  | Corosync communication        |
-| Migration         | 10.255.1.0/24  | VM/Container migration        |
-| Shared Storage    | 10.255.2.0/24  | Centralized storage access    |
+| Corosync          | 10.255.1.0/24    | Proxmox cluster communication |
+| Migration         | 10.255.2.0/24    | Proxmox VM migration          |
+| Shared Storage    | 10.255.3.0/24    | Centralized storage access    |
 ```
 
 ## Behind the Scenes 🌌
@@ -96,6 +96,8 @@ X1 and X2, while being from another planet, have a knack for understanding earth
 2. Run the Docker container:
    ```bash
    docker run -p 5000:5000 <image-name>:<tag>
+
+
    ```
 
 ### Using Docker Buildx (for multi-platform builds)
@@ -127,15 +129,29 @@ Once the Flask application is up and running:
        "zones": {
          "zone-a": [
            {"name": "Isolation", "purpose": "Isolated network for testing"},
-           {"name": "Wireless", "purpose": "Mobile phones and tablets"}
+           {"name": "Wireless", "purpose": "Mobile phones and tablets"},
+           {"name": "Wired", "purpose": "Desktops and wired devices"},
+           {"name": "Docker", "purpose": "Docker containers network"},
+           {"name": "Virtualization", "purpose": "VM virtualization hosts"},
+           {"name": "DMZ", "purpose": "Demilitarized Zone"}
          ],
          "zone-b": [
-           {"name": "Docker", "purpose": "Docker containers"}
+           {"name": "Isolation", "purpose": "Isolated network for testing"},
+           {"name": "Wireless", "purpose": "Mobile phones and tablets"},
+           {"name": "Wired", "purpose": "Desktops and wired devices"},
+           ...
+         ],
+         "zone-c": [
+           {"name": "Isolation", "purpose": "Isolated network for testing"},
+           {"name": "Wireless", "purpose": "Mobile phones and tablets"},
+           {"name": "Wired", "purpose": "Desktops and wired devices"},
+            ...
          ]
        },
        "spanned_vlans": [
          {"name": "Corosync", "cidr": "10.255.1.0/24", "purpose": "Proxmox cluster communication"},
-         {"name": "Migration", "cidr": "10.255.2.0/24", "purpose": "Proxmox VM migration"}
+         {"name": "Migration", "cidr": "10.255.2.0/24", "purpose": "Proxmox VM migration"},
+         {"name": "Shared Storage", "cidr": "10.255.3.0/24", "purpose": "Centralized storage access"}
        ]
      }
      ```
