@@ -32,7 +32,7 @@ In the age of smart devices, it's crucial to have a segmented network. You would
   "Spanned": [
     {
       "Network Name": "Network-Q",
-      "Purpose": "",
+      "Purpose": "Spanned network across multiple switches",
       "Subnet": "10.255.250.0/24",
       "Zone Name": "Spanned"
     }
@@ -46,19 +46,19 @@ In the age of smart devices, it's crucial to have a segmented network. You would
     },
     {
       "Network Name": "Network 1",
-      "Purpose": "",
+      "Purpose": "Example network 1a",
       "Subnet": "10.0.16.0/20",
       "Zone Name": "Zone-A"
     },
     {
       "Network Name": "Network 2",
-      "Purpose": "",
+      "Purpose": "Example network 2a",
       "Subnet": "10.0.32.0/20",
       "Zone Name": "Zone-A"
     },
     {
       "Network Name": "Network 3",
-      "Purpose": "",
+      "Purpose": "Example network 3a",
       "Subnet": "10.0.48.0/20",
       "Zone Name": "Zone-A"
     }
@@ -72,19 +72,19 @@ In the age of smart devices, it's crucial to have a segmented network. You would
     },
     {
       "Network Name": "Network 1",
-      "Purpose": "",
+      "Purpose": "Example network 2a",
       "Subnet": "10.1.16.0/20",
       "Zone Name": "Zone-B"
     },
     {
       "Network Name": "Network 2",
-      "Purpose": "",
+      "Purpose": "Example network 2b",
       "Subnet": "10.1.32.0/20",
       "Zone Name": "Zone-B"
     },
     {
       "Network Name": "Network 3",
-      "Purpose": "",
+      "Purpose": "Example network 2c",
       "Subnet": "10.1.48.0/20",
       "Zone Name": "Zone-B"
     }
