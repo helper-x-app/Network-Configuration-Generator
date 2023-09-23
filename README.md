@@ -25,6 +25,10 @@ In the age of smart devices, it's crucial to have a segmented network. You would
 
 3. **View Results**: The tool will then provide you with the appropriate subnets based on your input and the settings defined in `settings.json`.
 
+## Example Input
+
+![Example Input](images/example-input.png)
+
 ## Example Output 📄
 
 ```json
@@ -32,7 +36,7 @@ In the age of smart devices, it's crucial to have a segmented network. You would
   "Spanned": [
     {
       "Network Name": "Network-Q",
-      "Purpose": "Spanned network across multiple switches",
+      "Purpose": "Example spanned network Q",
       "Subnet": "10.255.250.0/24",
       "Zone Name": "Spanned"
     }
