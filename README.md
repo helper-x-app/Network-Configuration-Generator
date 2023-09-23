@@ -27,7 +27,70 @@ In the age of smart devices, it's crucial to have a segmented network. You would
 
 ## Example Output 📄
 
-(Include the example output table from the original README here)
+```json
+{
+  "Spanned": [
+    {
+      "Network Name": "Network-Q",
+      "Purpose": "",
+      "Subnet": "10.255.250.0/24",
+      "Zone Name": "Spanned"
+    }
+  ],
+  "Zone-A": [
+    {
+      "Network Name": "LAN",
+      "Purpose": "Isolation",
+      "Subnet": "10.0.1.0/20",
+      "Zone Name": "Zone-A"
+    },
+    {
+      "Network Name": "Network 1",
+      "Purpose": "",
+      "Subnet": "10.0.16.0/20",
+      "Zone Name": "Zone-A"
+    },
+    {
+      "Network Name": "Network 2",
+      "Purpose": "",
+      "Subnet": "10.0.32.0/20",
+      "Zone Name": "Zone-A"
+    },
+    {
+      "Network Name": "Network 3",
+      "Purpose": "",
+      "Subnet": "10.0.48.0/20",
+      "Zone Name": "Zone-A"
+    }
+  ],
+  "Zone-B": [
+    {
+      "Network Name": "LAN",
+      "Purpose": "Isolation",
+      "Subnet": "10.1.1.0/20",
+      "Zone Name": "Zone-B"
+    },
+    {
+      "Network Name": "Network 1",
+      "Purpose": "",
+      "Subnet": "10.1.16.0/20",
+      "Zone Name": "Zone-B"
+    },
+    {
+      "Network Name": "Network 2",
+      "Purpose": "",
+      "Subnet": "10.1.32.0/20",
+      "Zone Name": "Zone-B"
+    },
+    {
+      "Network Name": "Network 3",
+      "Purpose": "",
+      "Subnet": "10.1.48.0/20",
+      "Zone Name": "Zone-B"
+    }
+  ]
+}
+```
 
 ## Behind the Scenes 🌌
 
