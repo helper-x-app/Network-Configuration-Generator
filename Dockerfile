@@ -1,5 +1,5 @@
 # Use an official Python runtime based on Alpine as a parent image (build stage)
-FROM python:3.9-alpine as build
+FROM python:3.10-alpine as build
 
 # Set the working directory in the container
 WORKDIR /app
@@ -14,10 +14,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY app/ ./
 
 # Use a second, minimal parent image to reduce the final image size (production stage)
-FROM python:3.9-alpine
+FROM python:3.10-alpine
 
 # Copy the installed packages from the build stage
-COPY --from=build /usr/local/lib/python3.9/site-packages/ /usr/local/lib/python3.9/site-packages/
+COPY --from=build /usr/local/lib/python3.10/site-packages/ /usr/local/lib/python3.10/site-packages/
 
 # Copy the app from the build stage
 COPY --from=build /app /app
